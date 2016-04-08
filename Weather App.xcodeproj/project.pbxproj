@@ -3,13 +3,12 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 47;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		A21793B71CB7189E00995789 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A21793B61CB7189E00995789 /* main.m */; };
 		A21793BA1CB7189E00995789 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A21793B91CB7189E00995789 /* AppDelegate.m */; };
-		A21793BD1CB7189E00995789 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A21793BC1CB7189E00995789 /* ViewController.m */; };
 		A21793C01CB7189E00995789 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A21793BE1CB7189E00995789 /* Main.storyboard */; };
 		A21793C21CB7189E00995789 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A21793C11CB7189E00995789 /* Assets.xcassets */; };
 		A21793C51CB7189E00995789 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A21793C31CB7189E00995789 /* LaunchScreen.storyboard */; };
@@ -39,8 +38,6 @@
 		A21793B61CB7189E00995789 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		A21793B81CB7189E00995789 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		A21793B91CB7189E00995789 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		A21793BB1CB7189E00995789 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		A21793BC1CB7189E00995789 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		A21793BF1CB7189E00995789 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A21793C11CB7189E00995789 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A21793C41CB7189E00995789 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -103,8 +100,6 @@
 			children = (
 				A21793B81CB7189E00995789 /* AppDelegate.h */,
 				A21793B91CB7189E00995789 /* AppDelegate.m */,
-				A21793BB1CB7189E00995789 /* ViewController.h */,
-				A21793BC1CB7189E00995789 /* ViewController.m */,
 				A21793BE1CB7189E00995789 /* Main.storyboard */,
 				A21793C11CB7189E00995789 /* Assets.xcassets */,
 				A21793C31CB7189E00995789 /* LaunchScreen.storyboard */,
@@ -202,8 +197,9 @@
 		A21793AA1CB7189E00995789 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = AS;
 				LastUpgradeCheck = 0730;
-				ORGANIZATIONNAME = Applaudo;
+				ORGANIZATIONNAME = "Applaudo Studios";
 				TargetAttributes = {
 					A21793B11CB7189E00995789 = {
 						CreatedOnToolsVersion = 7.3;
@@ -219,7 +215,7 @@
 				};
 			};
 			buildConfigurationList = A21793AD1CB7189E00995789 /* Build configuration list for PBXProject "Weather App" */;
-			compatibilityVersion = "Xcode 3.2";
+			compatibilityVersion = "Xcode 6.3";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -270,7 +266,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A21793BD1CB7189E00995789 /* ViewController.m in Sources */,
 				A21793BA1CB7189E00995789 /* AppDelegate.m in Sources */,
 				A21793B71CB7189E00995789 /* main.m in Sources */,
 			);
@@ -414,6 +409,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "Weather App/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.applaudo.Weather-App";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -425,6 +421,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "Weather App/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.applaudo.Weather-App";
 				PRODUCT_NAME = "$(TARGET_NAME)";
