@@ -1,12 +1,12 @@
-#import "Weather.h"
+#import "ASWeather.h"
 
-@interface Weather ()
+@interface ASWeather ()
 
 // Private interface goes here.
 
 @end
 
-@implementation Weather
+@implementation ASWeather
 
 // Custom logic goes here.
 

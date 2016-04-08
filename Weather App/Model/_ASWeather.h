@@ -1,5 +1,5 @@
 // DO NOT EDIT. This file is machine-generated and constantly overwritten.
-// Make changes to Weather.h instead.
+// Make changes to ASWeather.h instead.
 
 #if __has_feature(modules)
     @import Foundation;
@@ -11,14 +11,14 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface WeatherID : NSManagedObjectID {}
+@interface ASWeatherID : NSManagedObjectID {}
 @end
 
-@interface _Weather : NSManagedObject
+@interface _ASWeather : NSManagedObject
 + (instancetype)insertInManagedObjectContext:(NSManagedObjectContext *)moc_;
 + (NSString*)entityName;
 + (NSEntityDescription*)entityInManagedObjectContext:(NSManagedObjectContext*)moc_;
-@property (nonatomic, readonly, strong) WeatherID *objectID;
+@property (nonatomic, readonly, strong) ASWeatherID *objectID;
 
 @property (nonatomic, strong, nullable) NSNumber* humidity;
 
@@ -68,11 +68,11 @@ NS_ASSUME_NONNULL_BEGIN
 - (double)windSpeedValue;
 - (void)setWindSpeedValue:(double)value_;
 
-@property (nonatomic, strong, nullable) NSString* zip;
+@property (nonatomic, strong) NSString* zip;
 
 @end
 
-@interface _Weather (CoreDataGeneratedPrimitiveAccessors)
+@interface _ASWeather (CoreDataGeneratedPrimitiveAccessors)
 
 - (NSNumber*)primitiveHumidity;
 - (void)setPrimitiveHumidity:(NSNumber*)value;
@@ -127,7 +127,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @end
 
-@interface WeatherAttributes: NSObject 
+@interface ASWeatherAttributes: NSObject 
 + (NSString *)humidity;
 + (NSString *)pressure;
 + (NSString *)temp;

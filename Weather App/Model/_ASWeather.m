@@ -1,12 +1,12 @@
 // DO NOT EDIT. This file is machine-generated and constantly overwritten.
-// Make changes to Weather.m instead.
+// Make changes to ASWeather.m instead.
 
-#import "_Weather.h"
+#import "_ASWeather.h"
 
-@implementation WeatherID
+@implementation ASWeatherID
 @end
 
-@implementation _Weather
+@implementation _ASWeather
 
 + (instancetype)insertInManagedObjectContext:(NSManagedObjectContext *)moc_ {
 	NSParameterAssert(moc_);
@@ -22,8 +22,8 @@
 	return [NSEntityDescription entityForName:@"Weather" inManagedObjectContext:moc_];
 }
 
-- (WeatherID*)objectID {
-	return (WeatherID*)[super objectID];
+- (ASWeatherID*)objectID {
+	return (ASWeatherID*)[super objectID];
 }
 
 + (NSSet*)keyPathsForValuesAffectingValueForKey:(NSString*)key {
@@ -237,7 +237,7 @@
 
 @end
 
-@implementation WeatherAttributes 
+@implementation ASWeatherAttributes 
 + (NSString *)humidity {
 	return @"humidity";
 }
