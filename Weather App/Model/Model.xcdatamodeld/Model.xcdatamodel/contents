@@ -6,6 +6,7 @@
                 <entry key="mappedKeyName" value="main.humidity"/>
             </userInfo>
         </attribute>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="pressure" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES">
             <userInfo>
                 <entry key="mappedKeyName" value="main.pressure"/>
@@ -31,6 +32,13 @@
                 <entry key="mappedKeyName" value="dt"/>
             </userInfo>
         </attribute>
+        <attribute name="weatherCondition" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="weatherDescription" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="weatherID" optional="YES" attributeType="String" syncable="YES">
+            <userInfo>
+                <entry key="mappedKeyName" value="id"/>
+            </userInfo>
+        </attribute>
         <attribute name="windDirection" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES">
             <userInfo>
                 <entry key="mappedKeyName" value="wind.deg"/>
@@ -42,8 +50,13 @@
             </userInfo>
         </attribute>
         <attribute name="zip" attributeType="String" indexed="YES" syncable="YES"/>
+        <uniquenessConstraints>
+            <uniquenessConstraint>
+                <constraint value="zip"/>
+            </uniquenessConstraint>
+        </uniquenessConstraints>
     </entity>
     <elements>
-        <element name="Weather" positionX="-63" positionY="-18" width="128" height="180"/>
+        <element name="Weather" positionX="-63" positionY="-18" width="128" height="240"/>
     </elements>
 </model>
