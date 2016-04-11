@@ -5,6 +5,7 @@
 
 target 'Weather App' do
     pod 'AFNetworking', '~> 3.1'
+    pod 'MagicalRecord', '~> 2.3'
 end
 
 target 'Weather AppTests' do
