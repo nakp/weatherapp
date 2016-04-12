@@ -19,6 +19,8 @@
 		A26597F31CB8426200D5009C /* ASWeatherDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A26597F21CB8426200D5009C /* ASWeatherDetailViewController.m */; };
 		A26597F81CB8433200D5009C /* _ASWeather.m in Sources */ = {isa = PBXBuildFile; fileRef = A26597F51CB8433200D5009C /* _ASWeather.m */; };
 		A26597F91CB8433200D5009C /* ASWeather.m in Sources */ = {isa = PBXBuildFile; fileRef = A26597F71CB8433200D5009C /* ASWeather.m */; };
+		A265980F1CBBFC0B00D5009C /* ASWeatherListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A265980E1CBBFC0B00D5009C /* ASWeatherListTableViewController.m */; };
+		A26598121CBC53EA00D5009C /* ASApplicationFirstRun.m in Sources */ = {isa = PBXBuildFile; fileRef = A26598111CBC53EA00D5009C /* ASApplicationFirstRun.m */; };
 		A60094CC88AA79DB31365D42 /* libPods-Weather App.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FC9AF56E5ABB8493BFEC351A /* libPods-Weather App.a */; };
 /* End PBXBuildFile section */
 
@@ -64,6 +66,10 @@
 		A26597F51CB8433200D5009C /* _ASWeather.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _ASWeather.m; sourceTree = "<group>"; };
 		A26597F61CB8433200D5009C /* ASWeather.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASWeather.h; sourceTree = "<group>"; };
 		A26597F71CB8433200D5009C /* ASWeather.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASWeather.m; sourceTree = "<group>"; };
+		A265980D1CBBFC0B00D5009C /* ASWeatherListTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASWeatherListTableViewController.h; sourceTree = "<group>"; };
+		A265980E1CBBFC0B00D5009C /* ASWeatherListTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASWeatherListTableViewController.m; sourceTree = "<group>"; };
+		A26598101CBC53EA00D5009C /* ASApplicationFirstRun.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASApplicationFirstRun.h; sourceTree = "<group>"; };
+		A26598111CBC53EA00D5009C /* ASApplicationFirstRun.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASApplicationFirstRun.m; sourceTree = "<group>"; };
 		C9E5EB9CD4F38D867BF6B94E /* Pods-Weather App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Weather App.release.xcconfig"; path = "Pods/Target Support Files/Pods-Weather App/Pods-Weather App.release.xcconfig"; sourceTree = "<group>"; };
 		FC9AF56E5ABB8493BFEC351A /* libPods-Weather App.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Weather App.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -128,7 +134,6 @@
 			isa = PBXGroup;
 			children = (
 				A21793EA1CB80B5F00995789 /* Weather API */,
-				A21793E91CB806B000995789 /* Model */,
 				A21793E81CB803DB00995789 /* ViewControllers */,
 				A21793B81CB7189E00995789 /* AppDelegate.h */,
 				A21793B91CB7189E00995789 /* AppDelegate.m */,
@@ -170,6 +175,7 @@
 		A21793E81CB803DB00995789 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				A265980C1CBBFBFB00D5009C /* WeatherList */,
 				A26597F01CB8424800D5009C /* WeatherDetail */,
 			);
 			path = ViewControllers;
@@ -184,14 +190,18 @@
 				A26597F71CB8433200D5009C /* ASWeather.m */,
 				A21793EE1CB81E9900995789 /* Model.xcdatamodeld */,
 			);
-			path = Model;
+			name = Model;
+			path = ../Model;
 			sourceTree = "<group>";
 		};
 		A21793EA1CB80B5F00995789 /* Weather API */ = {
 			isa = PBXGroup;
 			children = (
+				A21793E91CB806B000995789 /* Model */,
 				A21793EB1CB80F2600995789 /* ASWeatherAPIClient.h */,
 				A21793EC1CB80F2600995789 /* ASWeatherAPIClient.m */,
+				A26598101CBC53EA00D5009C /* ASApplicationFirstRun.h */,
+				A26598111CBC53EA00D5009C /* ASApplicationFirstRun.m */,
 			);
 			path = "Weather API";
 			sourceTree = "<group>";
@@ -203,6 +213,15 @@
 				A26597F21CB8426200D5009C /* ASWeatherDetailViewController.m */,
 			);
 			path = WeatherDetail;
+			sourceTree = "<group>";
+		};
+		A265980C1CBBFBFB00D5009C /* WeatherList */ = {
+			isa = PBXGroup;
+			children = (
+				A265980D1CBBFC0B00D5009C /* ASWeatherListTableViewController.h */,
+				A265980E1CBBFC0B00D5009C /* ASWeatherListTableViewController.m */,
+			);
+			path = WeatherList;
 			sourceTree = "<group>";
 		};
 		B1D3C3CC5551F719419D1B3E /* Pods */ = {
@@ -400,7 +419,9 @@
 				A26597F91CB8433200D5009C /* ASWeather.m in Sources */,
 				A21793BA1CB7189E00995789 /* AppDelegate.m in Sources */,
 				A21793B71CB7189E00995789 /* main.m in Sources */,
+				A265980F1CBBFC0B00D5009C /* ASWeatherListTableViewController.m in Sources */,
 				A21793ED1CB80F2600995789 /* ASWeatherAPIClient.m in Sources */,
+				A26598121CBC53EA00D5009C /* ASApplicationFirstRun.m in Sources */,
 				A26597F81CB8433200D5009C /* _ASWeather.m in Sources */,
 				A21793F01CB81E9900995789 /* Model.xcdatamodeld in Sources */,
 			);
@@ -545,7 +566,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "Weather App/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.applaudo.Weather-App";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -558,7 +579,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "Weather App/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.applaudo.Weather-App";
 				PRODUCT_NAME = "$(TARGET_NAME)";
