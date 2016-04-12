@@ -12,9 +12,13 @@
 #import "ASWeather.h"
 #import "ASWeatherAPIClient.h"
 
+#import <AFNetworking/AFNetworkReachabilityManager.h>
+#import <CWStatusBarNotification/CWStatusBarNotification.h>
+
 @interface ASWeatherListTableViewController () <NSFetchedResultsControllerDelegate, UIAlertViewDelegate>
 
 @property (strong, nonatomic) NSFetchedResultsController *data;
+@property (strong, nonatomic) CWStatusBarNotification *notificationBar;
 
 @end
 
@@ -28,6 +32,17 @@
     return _data;
 }
 
+- (CWStatusBarNotification *)notificationBar
+{
+    if (!_notificationBar) {
+        _notificationBar = [CWStatusBarNotification new];
+        // this view is intended to show errors only
+        _notificationBar.notificationLabelBackgroundColor = [UIColor redColor];
+        _notificationBar.notificationLabelTextColor = [UIColor whiteColor];
+    }
+    return _notificationBar;
+}
+
 #pragma mark - ViewController
 
 - (void)viewDidLoad
@@ -38,7 +53,9 @@
         [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd
                                                       target:self
                                                       action:@selector(showAlertView)];
-    // set up fetchedResults
+    
+    [self setUpReachability];
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -46,6 +63,41 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+#pragma mark - Reachability
+
+- (void)setUpReachability
+{
+    __weak typeof(self) weakSelf = self;
+    
+    // Listen to the reachability and display an error if there is not connection
+    [[AFNetworkReachabilityManager sharedManager] setReachabilityStatusChangeBlock:^(AFNetworkReachabilityStatus status) {
+        switch (status) {
+            case AFNetworkReachabilityStatusNotReachable:
+                [weakSelf showReachabilityAlert];
+                break;
+            case AFNetworkReachabilityStatusReachableViaWiFi:
+            case AFNetworkReachabilityStatusReachableViaWWAN:
+                [weakSelf dismissReachabilityAlert];
+            default:
+                break;
+        }
+    }];
+}
+
+- (void)showReachabilityAlert
+{
+    NSLog(@"Not reachable");
+    [self.notificationBar displayNotificationWithMessage:@"Internet connection is needed" completion:nil];
+    
+}
+
+- (void)dismissReachabilityAlert
+{
+    NSLog(@"Reachable");
+    [self.notificationBar dismissNotification];
+}
+
 
 #pragma mark - AlertView
 
@@ -136,6 +188,8 @@
         }
         error:^(NSError *error) {
             NSLog(@"Error: %@", error);
+            UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Error" message:error.localizedDescription delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil];
+            [alertView show];
             tableView.allowsSelection = YES;
         }];
 }
@@ -167,11 +221,6 @@
     case NSFetchedResultsChangeDelete: {
         [self.tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath]
                               withRowAnimation:UITableViewRowAnimationFade];
-        break;
-    }
-    case NSFetchedResultsChangeUpdate: {
-        //            [self configureCell:(TSPToDoCell *)[self.tableView cellForRowAtIndexPath:indexPath]
-        //            atIndexPath:indexPath];
         break;
     }
     case NSFetchedResultsChangeMove: {

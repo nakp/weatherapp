@@ -94,6 +94,11 @@ static NSString *const kAPIKey = @"2265a3200927fff69422588140d1ad9c";
     // If there's no connection, try to serve the latest cached result
     if (!self.reachable) {
         ASWeather *weather = [ASWeather MR_findFirstByAttribute:@"zip" withValue:ZIPCode];
+        if (!weather || !weather.weatherID.length) {
+            NSError *error = [[NSError alloc] initWithDomain:@"WeatherApp" code:-1 userInfo:@{NSLocalizedDescriptionKey: @"Information can't be retreived"}];
+            errorBlock(error);
+            return;
+        }
         successBlock(weather.weatherID);
         return;
     }
@@ -134,6 +139,10 @@ static NSString *const kAPIKey = @"2265a3200927fff69422588140d1ad9c";
     }
         completion:^(BOOL contextDidSave, NSError *_Nullable error) {
             if (error && !contextDidSave) {
+                errorBlock(error);
+                return;
+            }
+            if (!weatherID || !weatherID.length) {
                 errorBlock(error);
                 return;
             }
