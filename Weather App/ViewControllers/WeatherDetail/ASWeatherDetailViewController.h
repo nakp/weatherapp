@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
+@class ASWeather;
+
 @interface ASWeatherDetailViewController : UIViewController
+
+@property (strong, nonatomic) ASWeather *weather;
 
 @end
