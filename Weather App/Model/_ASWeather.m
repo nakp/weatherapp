@@ -93,6 +93,8 @@
 	[self setPrimitiveHumidity:@(value_)];
 }
 
+@dynamic name;
+
 @dynamic pressure;
 
 - (double)pressureValue {
@@ -193,6 +195,12 @@
 	[self setPrimitiveTime:@(value_)];
 }
 
+@dynamic weatherCondition;
+
+@dynamic weatherDescription;
+
+@dynamic weatherID;
+
 @dynamic windDirection;
 
 - (double)windDirectionValue {
@@ -241,6 +249,9 @@
 + (NSString *)humidity {
 	return @"humidity";
 }
++ (NSString *)name {
+	return @"name";
+}
 + (NSString *)pressure {
 	return @"pressure";
 }
@@ -255,6 +266,15 @@
 }
 + (NSString *)time {
 	return @"time";
+}
++ (NSString *)weatherCondition {
+	return @"weatherCondition";
+}
++ (NSString *)weatherDescription {
+	return @"weatherDescription";
+}
++ (NSString *)weatherID {
+	return @"weatherID";
 }
 + (NSString *)windDirection {
 	return @"windDirection";

@@ -26,6 +26,8 @@ NS_ASSUME_NONNULL_BEGIN
 - (double)humidityValue;
 - (void)setHumidityValue:(double)value_;
 
+@property (nonatomic, strong, nullable) NSString* name;
+
 @property (nonatomic, strong, nullable) NSNumber* pressure;
 
 @property (atomic) double pressureValue;
@@ -56,6 +58,12 @@ NS_ASSUME_NONNULL_BEGIN
 - (double)timeValue;
 - (void)setTimeValue:(double)value_;
 
+@property (nonatomic, strong, nullable) NSString* weatherCondition;
+
+@property (nonatomic, strong, nullable) NSString* weatherDescription;
+
+@property (nonatomic, strong, nullable) NSString* weatherID;
+
 @property (nonatomic, strong, nullable) NSNumber* windDirection;
 
 @property (atomic) double windDirectionValue;
@@ -79,6 +87,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (double)primitiveHumidityValue;
 - (void)setPrimitiveHumidityValue:(double)value_;
+
+- (NSString*)primitiveName;
+- (void)setPrimitiveName:(NSString*)value;
 
 - (NSNumber*)primitivePressure;
 - (void)setPrimitivePressure:(NSNumber*)value;
@@ -110,6 +121,15 @@ NS_ASSUME_NONNULL_BEGIN
 - (double)primitiveTimeValue;
 - (void)setPrimitiveTimeValue:(double)value_;
 
+- (NSString*)primitiveWeatherCondition;
+- (void)setPrimitiveWeatherCondition:(NSString*)value;
+
+- (NSString*)primitiveWeatherDescription;
+- (void)setPrimitiveWeatherDescription:(NSString*)value;
+
+- (NSString*)primitiveWeatherID;
+- (void)setPrimitiveWeatherID:(NSString*)value;
+
 - (NSNumber*)primitiveWindDirection;
 - (void)setPrimitiveWindDirection:(NSNumber*)value;
 
@@ -129,11 +149,15 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface ASWeatherAttributes: NSObject 
 + (NSString *)humidity;
++ (NSString *)name;
 + (NSString *)pressure;
 + (NSString *)temp;
 + (NSString *)tempMax;
 + (NSString *)tempMin;
 + (NSString *)time;
++ (NSString *)weatherCondition;
++ (NSString *)weatherDescription;
++ (NSString *)weatherID;
 + (NSString *)windDirection;
 + (NSString *)windSpeed;
 + (NSString *)zip;
