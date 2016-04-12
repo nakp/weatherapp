@@ -12,7 +12,6 @@
 #import "ASWeatherAPIClient.h"
 
 static NSString *const kAPIBaseURL = @"http://api.openweathermap.org/data/2.5/";
-static NSString *const kAPIKey = @"2265a3200927fff69422588140d1ad9c";
 
 @interface ASWeatherAPIClient ()
 @property (strong, nonatomic) AFHTTPSessionManager *manager;
@@ -55,8 +54,13 @@ static NSString *const kAPIKey = @"2265a3200927fff69422588140d1ad9c";
 
 - (NSMutableDictionary *)defautlParameters
 {
+    static NSString *APPID;
+    if (!APPID) {
+        // Load our API key from the Info.plist file
+        APPID = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"OpenWeatherAPIKey"];
+    }
     NSMutableDictionary *params = [NSMutableDictionary new];
-    [params setObject:kAPIKey forKey:@"APPID"];
+    [params setObject:APPID forKey:@"APPID"];
 
     return params;
 }

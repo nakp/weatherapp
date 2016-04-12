@@ -1,0 +1,11 @@
+# Weather App
+
+## Configure your API Key
+
+Add the `OpenWeatherAPIKey` to the `Info.plist` file
+
+## Install Cocoapods
+
+The dependencies are not included in the git respository. Must be installed before running the app.
+
+`pod install`
