@@ -9,6 +9,9 @@
 #import "ASApplicationFirstRun.h"
 
 #import "ASWeather.h"
+#import <AFNetworking/AFNetworking.h>
+#import <AFNetworking/AFNetworkReachabilityManager.h>
+#import <AFNetworking/UIKit+AFNetworking.h>
 #import <MagicalRecord/MagicalRecord.h>
 
 @implementation ASApplicationFirstRun
@@ -20,6 +23,11 @@
 
 + (void)checkFirstRun
 {
+    [AFNetworkActivityIndicatorManager sharedManager].enabled = YES;
+    [[AFNetworkReachabilityManager sharedManager] startMonitoring];
+    // Set up MagicalRecord
+    [MagicalRecord setupCoreDataStackWithStoreNamed:@"Model"];
+    
     if (![self firstRun]) {
         NSArray *zipCodes = @[ @"10007", @"33128", @"90012" ];
 
