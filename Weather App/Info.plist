@@ -28,7 +28,7 @@
 		<true/>
 	</dict>
 	<key>OpenWeatherAPIKey</key>
-	<string></string>
+	<string>2265a3200927fff69422588140d1ad9c</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
