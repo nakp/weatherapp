@@ -84,3 +84,4 @@ fastlane/screenshots
 ### Objective-C Patch ###
 *.xcscmblueprint
 
+.clang-format
